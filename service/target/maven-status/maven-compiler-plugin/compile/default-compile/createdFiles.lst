@@ -1,0 +1,14 @@
+org\thibaut\thelibrary\service\contract\UserService.class
+org\thibaut\thelibrary\service\contract\ServiceFactory.class
+org\thibaut\thelibrary\service\scheduler\CheckLoanScheduler.class
+org\thibaut\thelibrary\service\impl\AbstractService.class
+org\thibaut\thelibrary\service\impl\ServiceFactoryImpl.class
+org\thibaut\thelibrary\service\contract\AuthorService.class
+org\thibaut\thelibrary\service\impl\UserServiceImpl.class
+org\thibaut\thelibrary\service\configuration\SchedulerConfiguration.class
+org\thibaut\thelibrary\service\impl\AuthorServiceImpl.class
+org\thibaut\thelibrary\service\configuration\SecurityConfiguration.class
+org\thibaut\thelibrary\service\impl\PasswordServiceImpl.class
+org\thibaut\thelibrary\service\contract\BookService.class
+org\thibaut\thelibrary\service\contract\PasswordService.class
+org\thibaut\thelibrary\service\impl\BookServiceImpl.class

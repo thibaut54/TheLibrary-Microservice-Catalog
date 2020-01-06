@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>entity</module>
+		<module>repository</module>
+		<module>service</module>
+		<module>microservice</module>
+	</modules>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>org.thibaut.thelibrary</groupId>
+	<artifactId>thelibrary-webservice</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>thelibrary-webservice</name>
+	<description>A web service to manage a library</description>
+
+	<properties>
+		<java.version>13</java.version>
+		<maven.compiler.source>13</maven.compiler.source>
+		<maven.compiler.target>13</maven.compiler.target>
+		<start-class>org.thibaut.thelibrary.webservice.Application</start-class>
+		<modelmapper.version>2.3.0</modelmapper.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.thibaut.thelibrary</groupId>
+				<artifactId>entity</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.thibaut.thelibrary</groupId>
+				<artifactId>repository</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.thibaut.thelibrary</groupId>
+				<artifactId>service</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.thibaut.thelibrary</groupId>
+				<artifactId>webservice</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.modelmapper</groupId>
+				<artifactId>modelmapper</artifactId>
+				<version>${modelmapper.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+</project>
