@@ -1,6 +1,7 @@
 package org.thibaut.thelibrary.entity;
 
 import lombok.*;
+import org.joda.time.DateTime;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,21 +24,21 @@ public class UserEntity {
 	private String firstName;
 	private String lastName;
 	private String userName;
-//	private LocalDateTime registrationDate;
+	private DateTime registrationDate;
 
 	@ManyToMany
 	@JoinTable(
 			name = "roles_of_users",
 			joinColumns = { @JoinColumn(name = "user_id") },
 			inverseJoinColumns = { @JoinColumn(name = "role_id") } )
-	private List< RoleEntity > roles;
+	private List< RoleEntity > roleList;
 
 	@OneToOne
 	@JoinColumn(name = "coordinates_id")
 	private CoordinatesEntity coordinates;
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-	private List< LoanEntity > loans;
+	private List< LoanEntity > loanList;
 
 
 }

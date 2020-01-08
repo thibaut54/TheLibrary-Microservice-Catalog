@@ -1,8 +1,6 @@
 package org.thibaut.thelibrary.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,12 +9,15 @@ import java.time.LocalDate;
 @Table(name = "loan")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 public class LoanEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 	private LocalDate startDate;
 	private boolean returned = false;

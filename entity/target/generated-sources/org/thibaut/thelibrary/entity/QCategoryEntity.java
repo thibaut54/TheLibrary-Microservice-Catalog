@@ -16,15 +16,15 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class QCategoryEntity extends EntityPathBase<CategoryEntity> {
 
-    private static final long serialVersionUID = -393398847L;
+    private static final long serialVersionUID = 1890640269L;
 
     public static final QCategoryEntity categoryEntity = new QCategoryEntity("categoryEntity");
 
-    public final ListPath<BookEntity, QBookEntity> books = this.<BookEntity, QBookEntity>createList("books", BookEntity.class, QBookEntity.class, PathInits.DIRECT2);
+    public final ListPath<BookEntity, QBookEntity> bookList = this.<BookEntity, QBookEntity>createList("bookList", BookEntity.class, QBookEntity.class, PathInits.DIRECT2);
 
     public final StringPath category = createString("category");
 
-    public final NumberPath<Integer> id = createNumber("id", Integer.class);
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public QCategoryEntity(String variable) {
         super(CategoryEntity.class, forVariable(variable));

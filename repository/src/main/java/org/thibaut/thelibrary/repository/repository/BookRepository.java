@@ -9,7 +9,7 @@ import org.thibaut.thelibrary.entity.BookEntity;
 import java.util.List;
 
 @Repository
-public interface BookRepository extends JpaRepository< BookEntity, Integer > {
+public interface BookRepository extends JpaRepository< BookEntity, Long > {
 
 
 	List< BookEntity > getBooksByTitleContains( String title);

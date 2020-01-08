@@ -16,7 +16,7 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class QRoleEntity extends EntityPathBase<RoleEntity> {
 
-    private static final long serialVersionUID = -308338887L;
+    private static final long serialVersionUID = -559378171L;
 
     public static final QRoleEntity roleEntity = new QRoleEntity("roleEntity");
 
@@ -24,7 +24,7 @@ public class QRoleEntity extends EntityPathBase<RoleEntity> {
 
     public final StringPath role = createString("role");
 
-    public final ListPath<UserEntity, QUserEntity> users = this.<UserEntity, QUserEntity>createList("users", UserEntity.class, QUserEntity.class, PathInits.DIRECT2);
+    public final ListPath<UserEntity, QUserEntity> userList = this.<UserEntity, QUserEntity>createList("userList", UserEntity.class, QUserEntity.class, PathInits.DIRECT2);
 
     public QRoleEntity(String variable) {
         super(RoleEntity.class, forVariable(variable));

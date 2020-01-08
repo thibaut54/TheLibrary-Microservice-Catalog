@@ -16,7 +16,7 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class QUserEntity extends EntityPathBase<UserEntity> {
 
-    private static final long serialVersionUID = -199887154L;
+    private static final long serialVersionUID = -450926438L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
@@ -30,11 +30,13 @@ public class QUserEntity extends EntityPathBase<UserEntity> {
 
     public final StringPath lastName = createString("lastName");
 
-    public final ListPath<LoanEntity, QLoanEntity> loans = this.<LoanEntity, QLoanEntity>createList("loans", LoanEntity.class, QLoanEntity.class, PathInits.DIRECT2);
+    public final ListPath<LoanEntity, QLoanEntity> loanList = this.<LoanEntity, QLoanEntity>createList("loanList", LoanEntity.class, QLoanEntity.class, PathInits.DIRECT2);
 
     public final StringPath password = createString("password");
 
-    public final ListPath<RoleEntity, QRoleEntity> roles = this.<RoleEntity, QRoleEntity>createList("roles", RoleEntity.class, QRoleEntity.class, PathInits.DIRECT2);
+    public final DateTimePath<org.joda.time.DateTime> registrationDate = createDateTime("registrationDate", org.joda.time.DateTime.class);
+
+    public final ListPath<RoleEntity, QRoleEntity> roleList = this.<RoleEntity, QRoleEntity>createList("roleList", RoleEntity.class, QRoleEntity.class, PathInits.DIRECT2);
 
     public final StringPath userName = createString("userName");
 

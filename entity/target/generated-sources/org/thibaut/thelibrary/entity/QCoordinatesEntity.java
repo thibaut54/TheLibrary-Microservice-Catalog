@@ -16,7 +16,7 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class QCoordinatesEntity extends EntityPathBase<CoordinatesEntity> {
 
-    private static final long serialVersionUID = 1082800766L;
+    private static final long serialVersionUID = -274765006L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 

@@ -9,6 +9,7 @@ import java.util.List;
 @Table(name = "role")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
@@ -18,8 +19,8 @@ public class RoleEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToMany(mappedBy = "roles")
-	private List< UserEntity > users;
+	@ManyToMany(mappedBy = "roleList")
+	private List< UserEntity > userList;
 
 	private String role;
 

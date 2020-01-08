@@ -3,24 +3,24 @@ package org.thibaut.thelibrary.service.impl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.thibaut.thelibrary.entity.AuthorEntity;
-import org.thibaut.thelibrary.repository.contract.RepositoryFactory;
-import org.thibaut.thelibrary.repository.repository.UserRepository;
+import org.thibaut.thelibrary.repository.repository.AuthorRepository;
 import org.thibaut.thelibrary.service.contract.AuthorService;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
 @Component
-public class AuthorServiceImpl extends AbstractService implements AuthorService {
+public class AuthorServiceImpl implements AuthorService {
 
-	public AuthorServiceImpl( RepositoryFactory repositoryFactory, UserRepository userRepository, EntityManager em ) {
-		super( repositoryFactory, userRepository, em );
+	private AuthorRepository authorRepository;
+
+	public AuthorServiceImpl( AuthorRepository authorRepository) {
+		this.authorRepository = authorRepository;
 	}
 
 	@Override
 	public List< AuthorEntity > getAuthorByLastNameAndFirstName( String lastName, String firstName ){
 
-		return getRepositoryFactory().getAuthorRepository().getAuthorsByFirstNameAndLastName( firstName, lastName );
+		return authorRepository.getAuthorsByFirstNameAndLastName( firstName, lastName );
 	}
 
 

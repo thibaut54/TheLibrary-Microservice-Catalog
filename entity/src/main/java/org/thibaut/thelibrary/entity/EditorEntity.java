@@ -1,8 +1,6 @@
 package org.thibaut.thelibrary.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +9,9 @@ import java.util.List;
 @Table(name = "editor")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 public class EditorEntity {
 
@@ -24,6 +25,6 @@ public class EditorEntity {
 	private CoordinatesEntity coordinates;
 
 	@OneToMany(mappedBy = "editor")
-	private List< BookEntity > books;
+	private List< BookEntity > bookList;
 
 }//end EditorEntity

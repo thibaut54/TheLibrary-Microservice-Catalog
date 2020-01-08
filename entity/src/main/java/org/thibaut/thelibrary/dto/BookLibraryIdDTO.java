@@ -1,18 +1,18 @@
-package org.thibaut.thelibrary.entity;
+package org.thibaut.thelibrary.dto;
 
 import lombok.*;
 
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-@Embeddable
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class BookLibraryId implements Serializable {
+public class BookLibraryIdDTO implements Serializable {
 
 	private Integer bookId;
 	private Integer libraryId;
+
 }

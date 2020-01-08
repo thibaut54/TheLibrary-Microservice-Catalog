@@ -9,6 +9,7 @@ import java.util.List;
 @Table(name = "category")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
@@ -16,10 +17,10 @@ public class CategoryEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
-	@ManyToMany(mappedBy = "categories")
-	private List< BookEntity > books;
+	@ManyToMany(mappedBy = "categorieList")
+	private List< BookEntity > bookList;
 
 	private String category;
 

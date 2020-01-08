@@ -1,8 +1,6 @@
 package org.thibaut.thelibrary.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,11 +8,14 @@ import javax.persistence.*;
 @Table(name = "books_of_libraries")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 public class BooksOfLibraries {
 
 	@EmbeddedId
-	private BookLibraryId id;
+	private BookLibraryIdDTO id;
 
 	@ManyToOne
 	@MapsId("bookId")

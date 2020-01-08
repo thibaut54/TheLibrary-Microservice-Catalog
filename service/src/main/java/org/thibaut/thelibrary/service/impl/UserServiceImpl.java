@@ -2,33 +2,25 @@ package org.thibaut.thelibrary.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.thibaut.thelibrary.entity.UserEntity;
-import org.thibaut.thelibrary.repository.contract.RepositoryFactory;
 import org.thibaut.thelibrary.repository.repository.RoleRepository;
 import org.thibaut.thelibrary.repository.repository.UserRepository;
 import org.thibaut.thelibrary.service.contract.UserService;
 
-import javax.persistence.EntityManager;
-
 @Service
-public class UserServiceImpl extends AbstractService implements UserService {
+public class UserServiceImpl implements UserService {
 
 	private RoleRepository roleRepository;
+	private UserRepository userRepository;
 
-	public UserServiceImpl(
-			RepositoryFactory repositoryFactory,
-			UserRepository userRepository,
-			EntityManager em,
-			RoleRepository roleRepository) {
-		super( repositoryFactory, userRepository, em );
+	public UserServiceImpl( RoleRepository roleRepository, UserRepository userRepository ) {
 		this.roleRepository = roleRepository;
+		this.userRepository = userRepository;
 	}
 
 	@Override
 	public UserEntity findByUserName( String username ) {
-		UserEntity userEntity;
-		userEntity = getRepositoryFactory( ).getUserRepository( ).findByUserName( username );
-//			userEntity.setRoles( getRepositoryFactory().getRoleRepository().findRoleByUserName( userEntity.getUserName() ) );
-		userEntity.setRoles( roleRepository.getRolesByUsername( username ) );
+		UserEntity userEntity = userRepository.findByUserName( username );
+		userEntity.setRoleList( roleRepository.getRolesByUsername( username ) );
 
 		return userEntity;
 	}
@@ -36,10 +28,8 @@ public class UserServiceImpl extends AbstractService implements UserService {
 
 	@Override
 	public UserEntity findByEmail( String email ) {
-		UserEntity userEntity;
-		userEntity = getRepositoryFactory( ).getUserRepository( ).findByEmail( email );
-//			userEntity.setRoles( getRepositoryFactory().getRoleRepository().findRoleByEmail( email ) );
-		userEntity.setRoles( roleRepository.getRolesByEmail( email ) );
+		UserEntity userEntity = userRepository.findByEmail( email );
+		userEntity.setRoleList( roleRepository.getRolesByEmail( email ) );
 
 		return userEntity;
 	}

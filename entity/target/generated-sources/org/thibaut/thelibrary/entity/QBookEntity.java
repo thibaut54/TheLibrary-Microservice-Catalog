@@ -16,31 +16,31 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class QBookEntity extends EntityPathBase<BookEntity> {
 
-    private static final long serialVersionUID = 504428396L;
+    private static final long serialVersionUID = 253389112L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
     public static final QBookEntity bookEntity = new QBookEntity("bookEntity");
 
-    public final ListPath<AuthorEntity, QAuthorEntity> authors = this.<AuthorEntity, QAuthorEntity>createList("authors", AuthorEntity.class, QAuthorEntity.class, PathInits.DIRECT2);
+    public final ListPath<AuthorEntity, QAuthorEntity> authorList = this.<AuthorEntity, QAuthorEntity>createList("authorList", AuthorEntity.class, QAuthorEntity.class, PathInits.DIRECT2);
 
-    public final ListPath<CategoryEntity, QCategoryEntity> categories = this.<CategoryEntity, QCategoryEntity>createList("categories", CategoryEntity.class, QCategoryEntity.class, PathInits.DIRECT2);
+    public final ListPath<CategoryEntity, QCategoryEntity> categorieList = this.<CategoryEntity, QCategoryEntity>createList("categorieList", CategoryEntity.class, QCategoryEntity.class, PathInits.DIRECT2);
 
     public final QEditorEntity editor;
 
-    public final NumberPath<Integer> id = createNumber("id", Integer.class);
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final NumberPath<Integer> isbn = createNumber("isbn", Integer.class);
 
     public final StringPath language = createString("language");
 
-    public final ListPath<LibraryEntity, QLibraryEntity> libraries = this.<LibraryEntity, QLibraryEntity>createList("libraries", LibraryEntity.class, QLibraryEntity.class, PathInits.DIRECT2);
+    public final ListPath<LibraryEntity, QLibraryEntity> librarieList = this.<LibraryEntity, QLibraryEntity>createList("librarieList", LibraryEntity.class, QLibraryEntity.class, PathInits.DIRECT2);
 
-    public final ListPath<LoanEntity, QLoanEntity> loans = this.<LoanEntity, QLoanEntity>createList("loans", LoanEntity.class, QLoanEntity.class, PathInits.DIRECT2);
+    public final ListPath<LoanEntity, QLoanEntity> loanList = this.<LoanEntity, QLoanEntity>createList("loanList", LoanEntity.class, QLoanEntity.class, PathInits.DIRECT2);
 
     public final NumberPath<Integer> numberOfPages = createNumber("numberOfPages", Integer.class);
 
-    public final DatePath<java.time.LocalDate> publicationDate = createDate("publicationDate", java.time.LocalDate.class);
+    public final DateTimePath<org.joda.time.DateTime> publicationDate = createDateTime("publicationDate", org.joda.time.DateTime.class);
 
     public final StringPath title = createString("title");
 

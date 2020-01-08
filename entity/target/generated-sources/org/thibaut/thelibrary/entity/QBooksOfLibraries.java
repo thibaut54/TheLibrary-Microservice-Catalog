@@ -16,7 +16,7 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class QBooksOfLibraries extends EntityPathBase<BooksOfLibraries> {
 
-    private static final long serialVersionUID = -1987408712L;
+    private static final long serialVersionUID = -1754106492L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
@@ -24,7 +24,7 @@ public class QBooksOfLibraries extends EntityPathBase<BooksOfLibraries> {
 
     public final QBookEntity book;
 
-    public final QBookLibraryId id;
+    public final QBookLibraryIdDTO id;
 
     public final QLibraryEntity library;
 
@@ -49,7 +49,7 @@ public class QBooksOfLibraries extends EntityPathBase<BooksOfLibraries> {
     public QBooksOfLibraries(Class<? extends BooksOfLibraries> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.book = inits.isInitialized("book") ? new QBookEntity(forProperty("book"), inits.get("book")) : null;
-        this.id = inits.isInitialized("id") ? new QBookLibraryId(forProperty("id")) : null;
+        this.id = inits.isInitialized("id") ? new QBookLibraryIdDTO(forProperty("id")) : null;
         this.library = inits.isInitialized("library") ? new QLibraryEntity(forProperty("library"), inits.get("library")) : null;
     }
 

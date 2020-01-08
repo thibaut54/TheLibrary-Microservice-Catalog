@@ -16,7 +16,7 @@ import com.querydsl.core.types.dsl.PathInits;
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class QLoanEntity extends EntityPathBase<LoanEntity> {
 
-    private static final long serialVersionUID = -1722703821L;
+    private static final long serialVersionUID = -1973743105L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
@@ -26,7 +26,7 @@ public class QLoanEntity extends EntityPathBase<LoanEntity> {
 
     public final DatePath<java.time.LocalDate> extendedEndDate = createDate("extendedEndDate", java.time.LocalDate.class);
 
-    public final NumberPath<Integer> id = createNumber("id", Integer.class);
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final DatePath<java.time.LocalDate> initialEndDate = createDate("initialEndDate", java.time.LocalDate.class);
 

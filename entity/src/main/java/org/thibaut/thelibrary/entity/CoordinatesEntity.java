@@ -1,8 +1,6 @@
 package org.thibaut.thelibrary.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,6 +8,9 @@ import javax.persistence.*;
 @Table(name = "coordinates")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 public class CoordinatesEntity {
 
@@ -26,7 +27,7 @@ public class CoordinatesEntity {
 	private String email;
 
 
-	@OneToOne(mappedBy = "coordinates") //--> la value de mappedBy, c'est le nom de la Classe qui porte la relation ou le nom de la Table en DB
+	@OneToOne(mappedBy = "coordinates")
 	private UserEntity user;
 
 	@OneToOne(mappedBy = "coordinates")

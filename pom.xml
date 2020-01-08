@@ -21,17 +21,21 @@
 	</parent>
 
 	<groupId>org.thibaut.thelibrary</groupId>
-	<artifactId>thelibrary-webservice</artifactId>
+	<artifactId>thelibrary-microservice-catalog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>thelibrary-webservice</name>
-	<description>A web service to manage a library</description>
+	<name>thelibrary-microservice-catalog</name>
+	<description>A microservice to consult the library's catalog</description>
 
 	<properties>
-		<java.version>13</java.version>
-		<maven.compiler.source>13</maven.compiler.source>
-		<maven.compiler.target>13</maven.compiler.target>
+		<java-version>1.8</java-version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<start-class>org.thibaut.thelibrary.webservice.Application</start-class>
-		<modelmapper.version>2.3.0</modelmapper.version>
+		<joda-time.version>2.10.5</joda-time.version>
+		<mapstruct.version>1.3.1.Final</mapstruct.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<springdoc-openapi-ui.version>1.2.24</springdoc-openapi-ui.version>
+		<projectlombok.version>1.18.0</projectlombok.version>
 	</properties>
 
 	<dependencyManagement>
@@ -56,13 +60,60 @@
 				<artifactId>webservice</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
 			<dependency>
-				<groupId>org.modelmapper</groupId>
-				<artifactId>modelmapper</artifactId>
-				<version>${modelmapper.version}</version>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${joda-time.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct</artifactId>
+				<version>${mapstruct.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc-openapi-ui.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+						<!-- See https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html -->
+						<!-- Classpath elements to supply as annotation processor path. If specified, the compiler   -->
+						<!-- will detect annotation processors only in those classpath elements. If omitted, the     -->
+						<!-- default classpath is used to detect annotation processors. The detection itself depends -->
+						<!-- on the configuration of annotationProcessors.                                           -->
+						<!--                                                                                         -->
+						<!-- According to this documentation, the provided dependency processor is not considered!   -->
+						<annotationProcessorPaths>
+							<path>
+								<groupId>org.mapstruct</groupId>
+								<artifactId>mapstruct-processor</artifactId>
+								<version>${mapstruct.version}</version>
+							</path>
+							<path>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+								<version>${projectlombok.version}</version>
+							</path>
+						</annotationProcessorPaths>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 </project>
