@@ -37,7 +37,7 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookDTO save( BookDTO bookDTO ){
-//		bookDTO.setLastUpdate( DateTime.now() );
+		Optional.of( BookMapper.INSTANCE.toEntity( bookDTO ) ).ifPresent( bookEntity -> bookRepository.save( bookEntity ) );
 		bookRepository.save( BookMapper.INSTANCE.toEntity( bookDTO ) );
 		return bookDTO;
 	}

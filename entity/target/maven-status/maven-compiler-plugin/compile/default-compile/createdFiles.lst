@@ -14,6 +14,7 @@ org\thibaut\thelibrary\dto\RoleDTO$RoleDTOBuilder.class
 org\thibaut\thelibrary\entity\AuthorEntity$AuthorEntityBuilder.class
 org\thibaut\thelibrary\entity\LibraryEntity.class
 org\thibaut\thelibrary\dto\BookLibraryIdDTO.class
+org\thibaut\thelibrary\entity\ApiResponse.class
 org\thibaut\thelibrary\entity\QBookEntity.class
 org\thibaut\thelibrary\entity\CoordinatesEntity.class
 org\thibaut\thelibrary\dto\LoanDTO.class
@@ -27,6 +28,7 @@ org\thibaut\thelibrary\entity\RoleEntity.class
 org\thibaut\thelibrary\entity\BooksOfLibraries$BooksOfLibrariesBuilder.class
 org\thibaut\thelibrary\dto\AuthorDTO$AuthorDTOBuilder.class
 org\thibaut\thelibrary\entity\QLibraryEntity.class
+org\thibaut\thelibrary\entity\AuthToken.class
 org\thibaut\thelibrary\dto\CoordinatesDTO$CoordinatesDTOBuilder.class
 org\thibaut\thelibrary\dto\CoordinatesDTO.class
 org\thibaut\thelibrary\dto\AuthorDTO.class

@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class CoordinatesEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
 	private String street;

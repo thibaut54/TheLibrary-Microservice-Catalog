@@ -49,7 +49,7 @@ import org.thibaut.thelibrary.entity.UserEntity.UserEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-08T11:59:12+0100",
+    date = "2020-01-15T14:59:39+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 1.8.0_211 (Oracle Corporation)"
 )
 public class AuthorMapperImpl implements AuthorMapper {
@@ -264,6 +264,68 @@ public class AuthorMapperImpl implements AuthorMapper {
         return list1;
     }
 
+    protected EditorDTO editorEntityToEditorDTO(EditorEntity editorEntity) {
+        if ( editorEntity == null ) {
+            return null;
+        }
+
+        EditorDTOBuilder editorDTO = EditorDTO.builder();
+
+        editorDTO.id( editorEntity.getId() );
+        editorDTO.name( editorEntity.getName() );
+        editorDTO.coordinates( coordinatesEntityToCoordinatesDTO( editorEntity.getCoordinates() ) );
+
+        return editorDTO.build();
+    }
+
+    protected CoordinatesDTO coordinatesEntityToCoordinatesDTO(CoordinatesEntity coordinatesEntity) {
+        if ( coordinatesEntity == null ) {
+            return null;
+        }
+
+        CoordinatesDTOBuilder coordinatesDTO = CoordinatesDTO.builder();
+
+        coordinatesDTO.id( coordinatesEntity.getId() );
+        coordinatesDTO.street( coordinatesEntity.getStreet() );
+        coordinatesDTO.streetNumber( coordinatesEntity.getStreetNumber() );
+        coordinatesDTO.additionalInformation( coordinatesEntity.getAdditionalInformation() );
+        coordinatesDTO.city( coordinatesEntity.getCity() );
+        coordinatesDTO.postalCode( coordinatesEntity.getPostalCode() );
+        coordinatesDTO.phone( coordinatesEntity.getPhone() );
+        coordinatesDTO.email( coordinatesEntity.getEmail() );
+        coordinatesDTO.editor( editorEntityToEditorDTO( coordinatesEntity.getEditor() ) );
+        coordinatesDTO.library( libraryEntityToLibraryDTO( coordinatesEntity.getLibrary() ) );
+
+        return coordinatesDTO.build();
+    }
+
+    protected LibraryDTO libraryEntityToLibraryDTO(LibraryEntity libraryEntity) {
+        if ( libraryEntity == null ) {
+            return null;
+        }
+
+        LibraryDTOBuilder libraryDTO = LibraryDTO.builder();
+
+        libraryDTO.id( libraryEntity.getId() );
+        libraryDTO.name( libraryEntity.getName() );
+        libraryDTO.coordinates( coordinatesEntityToCoordinatesDTO( libraryEntity.getCoordinates() ) );
+
+        return libraryDTO.build();
+    }
+
+    protected List<LibraryDTO> libraryEntityListToLibraryDTOList(List<LibraryEntity> list) {
+        if ( list == null ) {
+            return null;
+        }
+
+        List<LibraryDTO> list1 = new ArrayList<LibraryDTO>( list.size() );
+        for ( LibraryEntity libraryEntity : list ) {
+            list1.add( libraryEntityToLibraryDTO( libraryEntity ) );
+        }
+
+        return list1;
+    }
+
     protected RoleDTO roleEntityToRoleDTO(RoleEntity roleEntity) {
         if ( roleEntity == null ) {
             return null;
@@ -288,23 +350,6 @@ public class AuthorMapperImpl implements AuthorMapper {
         }
 
         return list1;
-    }
-
-    protected LoanDTO loanEntityToLoanDTO(LoanEntity loanEntity) {
-        if ( loanEntity == null ) {
-            return null;
-        }
-
-        LoanDTOBuilder loanDTO = LoanDTO.builder();
-
-        loanDTO.id( loanEntity.getId() );
-        loanDTO.startDate( xmlGregorianCalendarToJodaDateTime( localDateToXmlGregorianCalendar( loanEntity.getStartDate() ) ) );
-        loanDTO.returned( loanEntity.isReturned() );
-        loanDTO.initialEndDate( xmlGregorianCalendarToJodaDateTime( localDateToXmlGregorianCalendar( loanEntity.getInitialEndDate() ) ) );
-        loanDTO.extendedEndDate( xmlGregorianCalendarToJodaDateTime( localDateToXmlGregorianCalendar( loanEntity.getExtendedEndDate() ) ) );
-        loanDTO.user( userEntityToUserDTO( loanEntity.getUser() ) );
-
-        return loanDTO.build();
     }
 
     protected List<LoanDTO> loanEntityListToLoanDTOList(List<LoanEntity> list) {
@@ -340,67 +385,21 @@ public class AuthorMapperImpl implements AuthorMapper {
         return userDTO.build();
     }
 
-    protected EditorDTO editorEntityToEditorDTO(EditorEntity editorEntity) {
-        if ( editorEntity == null ) {
+    protected LoanDTO loanEntityToLoanDTO(LoanEntity loanEntity) {
+        if ( loanEntity == null ) {
             return null;
         }
 
-        EditorDTOBuilder editorDTO = EditorDTO.builder();
+        LoanDTOBuilder loanDTO = LoanDTO.builder();
 
-        editorDTO.id( editorEntity.getId() );
-        editorDTO.name( editorEntity.getName() );
-        editorDTO.coordinates( coordinatesEntityToCoordinatesDTO( editorEntity.getCoordinates() ) );
+        loanDTO.id( loanEntity.getId() );
+        loanDTO.startDate( xmlGregorianCalendarToJodaDateTime( localDateToXmlGregorianCalendar( loanEntity.getStartDate() ) ) );
+        loanDTO.returned( loanEntity.isReturned() );
+        loanDTO.initialEndDate( xmlGregorianCalendarToJodaDateTime( localDateToXmlGregorianCalendar( loanEntity.getInitialEndDate() ) ) );
+        loanDTO.extendedEndDate( xmlGregorianCalendarToJodaDateTime( localDateToXmlGregorianCalendar( loanEntity.getExtendedEndDate() ) ) );
+        loanDTO.user( userEntityToUserDTO( loanEntity.getUser() ) );
 
-        return editorDTO.build();
-    }
-
-    protected CoordinatesDTO coordinatesEntityToCoordinatesDTO(CoordinatesEntity coordinatesEntity) {
-        if ( coordinatesEntity == null ) {
-            return null;
-        }
-
-        CoordinatesDTOBuilder coordinatesDTO = CoordinatesDTO.builder();
-
-        coordinatesDTO.id( coordinatesEntity.getId() );
-        coordinatesDTO.street( coordinatesEntity.getStreet() );
-        coordinatesDTO.streetNumber( coordinatesEntity.getStreetNumber() );
-        coordinatesDTO.additionalInformation( coordinatesEntity.getAdditionalInformation() );
-        coordinatesDTO.city( coordinatesEntity.getCity() );
-        coordinatesDTO.postalCode( coordinatesEntity.getPostalCode() );
-        coordinatesDTO.phone( coordinatesEntity.getPhone() );
-        coordinatesDTO.email( coordinatesEntity.getEmail() );
-        coordinatesDTO.user( userEntityToUserDTO( coordinatesEntity.getUser() ) );
-        coordinatesDTO.editor( editorEntityToEditorDTO( coordinatesEntity.getEditor() ) );
-        coordinatesDTO.library( libraryEntityToLibraryDTO( coordinatesEntity.getLibrary() ) );
-
-        return coordinatesDTO.build();
-    }
-
-    protected LibraryDTO libraryEntityToLibraryDTO(LibraryEntity libraryEntity) {
-        if ( libraryEntity == null ) {
-            return null;
-        }
-
-        LibraryDTOBuilder libraryDTO = LibraryDTO.builder();
-
-        libraryDTO.id( libraryEntity.getId() );
-        libraryDTO.name( libraryEntity.getName() );
-        libraryDTO.coordinates( coordinatesEntityToCoordinatesDTO( libraryEntity.getCoordinates() ) );
-
-        return libraryDTO.build();
-    }
-
-    protected List<LibraryDTO> libraryEntityListToLibraryDTOList(List<LibraryEntity> list) {
-        if ( list == null ) {
-            return null;
-        }
-
-        List<LibraryDTO> list1 = new ArrayList<LibraryDTO>( list.size() );
-        for ( LibraryEntity libraryEntity : list ) {
-            list1.add( libraryEntityToLibraryDTO( libraryEntity ) );
-        }
-
-        return list1;
+        return loanDTO.build();
     }
 
     protected BookDTO bookEntityToBookDTO(BookEntity bookEntity) {
@@ -464,6 +463,68 @@ public class AuthorMapperImpl implements AuthorMapper {
         return list1;
     }
 
+    protected EditorEntity editorDTOToEditorEntity(EditorDTO editorDTO) {
+        if ( editorDTO == null ) {
+            return null;
+        }
+
+        EditorEntityBuilder editorEntity = EditorEntity.builder();
+
+        editorEntity.id( editorDTO.getId() );
+        editorEntity.name( editorDTO.getName() );
+        editorEntity.coordinates( coordinatesDTOToCoordinatesEntity( editorDTO.getCoordinates() ) );
+
+        return editorEntity.build();
+    }
+
+    protected CoordinatesEntity coordinatesDTOToCoordinatesEntity(CoordinatesDTO coordinatesDTO) {
+        if ( coordinatesDTO == null ) {
+            return null;
+        }
+
+        CoordinatesEntityBuilder coordinatesEntity = CoordinatesEntity.builder();
+
+        coordinatesEntity.id( coordinatesDTO.getId() );
+        coordinatesEntity.street( coordinatesDTO.getStreet() );
+        coordinatesEntity.streetNumber( coordinatesDTO.getStreetNumber() );
+        coordinatesEntity.additionalInformation( coordinatesDTO.getAdditionalInformation() );
+        coordinatesEntity.city( coordinatesDTO.getCity() );
+        coordinatesEntity.postalCode( coordinatesDTO.getPostalCode() );
+        coordinatesEntity.phone( coordinatesDTO.getPhone() );
+        coordinatesEntity.email( coordinatesDTO.getEmail() );
+        coordinatesEntity.editor( editorDTOToEditorEntity( coordinatesDTO.getEditor() ) );
+        coordinatesEntity.library( libraryDTOToLibraryEntity( coordinatesDTO.getLibrary() ) );
+
+        return coordinatesEntity.build();
+    }
+
+    protected LibraryEntity libraryDTOToLibraryEntity(LibraryDTO libraryDTO) {
+        if ( libraryDTO == null ) {
+            return null;
+        }
+
+        LibraryEntityBuilder libraryEntity = LibraryEntity.builder();
+
+        libraryEntity.id( libraryDTO.getId() );
+        libraryEntity.name( libraryDTO.getName() );
+        libraryEntity.coordinates( coordinatesDTOToCoordinatesEntity( libraryDTO.getCoordinates() ) );
+
+        return libraryEntity.build();
+    }
+
+    protected List<LibraryEntity> libraryDTOListToLibraryEntityList(List<LibraryDTO> list) {
+        if ( list == null ) {
+            return null;
+        }
+
+        List<LibraryEntity> list1 = new ArrayList<LibraryEntity>( list.size() );
+        for ( LibraryDTO libraryDTO : list ) {
+            list1.add( libraryDTOToLibraryEntity( libraryDTO ) );
+        }
+
+        return list1;
+    }
+
     protected RoleEntity roleDTOToRoleEntity(RoleDTO roleDTO) {
         if ( roleDTO == null ) {
             return null;
@@ -488,23 +549,6 @@ public class AuthorMapperImpl implements AuthorMapper {
         }
 
         return list1;
-    }
-
-    protected LoanEntity loanDTOToLoanEntity(LoanDTO loanDTO) {
-        if ( loanDTO == null ) {
-            return null;
-        }
-
-        LoanEntityBuilder loanEntity = LoanEntity.builder();
-
-        loanEntity.id( loanDTO.getId() );
-        loanEntity.startDate( xmlGregorianCalendarToLocalDate( jodaDateTimeToXmlGregorianCalendar( loanDTO.getStartDate() ) ) );
-        loanEntity.returned( loanDTO.isReturned() );
-        loanEntity.initialEndDate( xmlGregorianCalendarToLocalDate( jodaDateTimeToXmlGregorianCalendar( loanDTO.getInitialEndDate() ) ) );
-        loanEntity.extendedEndDate( xmlGregorianCalendarToLocalDate( jodaDateTimeToXmlGregorianCalendar( loanDTO.getExtendedEndDate() ) ) );
-        loanEntity.user( userDTOToUserEntity( loanDTO.getUser() ) );
-
-        return loanEntity.build();
     }
 
     protected List<LoanEntity> loanDTOListToLoanEntityList(List<LoanDTO> list) {
@@ -540,67 +584,21 @@ public class AuthorMapperImpl implements AuthorMapper {
         return userEntity.build();
     }
 
-    protected EditorEntity editorDTOToEditorEntity(EditorDTO editorDTO) {
-        if ( editorDTO == null ) {
+    protected LoanEntity loanDTOToLoanEntity(LoanDTO loanDTO) {
+        if ( loanDTO == null ) {
             return null;
         }
 
-        EditorEntityBuilder editorEntity = EditorEntity.builder();
+        LoanEntityBuilder loanEntity = LoanEntity.builder();
 
-        editorEntity.id( editorDTO.getId() );
-        editorEntity.name( editorDTO.getName() );
-        editorEntity.coordinates( coordinatesDTOToCoordinatesEntity( editorDTO.getCoordinates() ) );
+        loanEntity.id( loanDTO.getId() );
+        loanEntity.startDate( xmlGregorianCalendarToLocalDate( jodaDateTimeToXmlGregorianCalendar( loanDTO.getStartDate() ) ) );
+        loanEntity.returned( loanDTO.isReturned() );
+        loanEntity.initialEndDate( xmlGregorianCalendarToLocalDate( jodaDateTimeToXmlGregorianCalendar( loanDTO.getInitialEndDate() ) ) );
+        loanEntity.extendedEndDate( xmlGregorianCalendarToLocalDate( jodaDateTimeToXmlGregorianCalendar( loanDTO.getExtendedEndDate() ) ) );
+        loanEntity.user( userDTOToUserEntity( loanDTO.getUser() ) );
 
-        return editorEntity.build();
-    }
-
-    protected CoordinatesEntity coordinatesDTOToCoordinatesEntity(CoordinatesDTO coordinatesDTO) {
-        if ( coordinatesDTO == null ) {
-            return null;
-        }
-
-        CoordinatesEntityBuilder coordinatesEntity = CoordinatesEntity.builder();
-
-        coordinatesEntity.id( coordinatesDTO.getId() );
-        coordinatesEntity.street( coordinatesDTO.getStreet() );
-        coordinatesEntity.streetNumber( coordinatesDTO.getStreetNumber() );
-        coordinatesEntity.additionalInformation( coordinatesDTO.getAdditionalInformation() );
-        coordinatesEntity.city( coordinatesDTO.getCity() );
-        coordinatesEntity.postalCode( coordinatesDTO.getPostalCode() );
-        coordinatesEntity.phone( coordinatesDTO.getPhone() );
-        coordinatesEntity.email( coordinatesDTO.getEmail() );
-        coordinatesEntity.user( userDTOToUserEntity( coordinatesDTO.getUser() ) );
-        coordinatesEntity.editor( editorDTOToEditorEntity( coordinatesDTO.getEditor() ) );
-        coordinatesEntity.library( libraryDTOToLibraryEntity( coordinatesDTO.getLibrary() ) );
-
-        return coordinatesEntity.build();
-    }
-
-    protected LibraryEntity libraryDTOToLibraryEntity(LibraryDTO libraryDTO) {
-        if ( libraryDTO == null ) {
-            return null;
-        }
-
-        LibraryEntityBuilder libraryEntity = LibraryEntity.builder();
-
-        libraryEntity.id( libraryDTO.getId() );
-        libraryEntity.name( libraryDTO.getName() );
-        libraryEntity.coordinates( coordinatesDTOToCoordinatesEntity( libraryDTO.getCoordinates() ) );
-
-        return libraryEntity.build();
-    }
-
-    protected List<LibraryEntity> libraryDTOListToLibraryEntityList(List<LibraryDTO> list) {
-        if ( list == null ) {
-            return null;
-        }
-
-        List<LibraryEntity> list1 = new ArrayList<LibraryEntity>( list.size() );
-        for ( LibraryDTO libraryDTO : list ) {
-            list1.add( libraryDTOToLibraryEntity( libraryDTO ) );
-        }
-
-        return list1;
+        return loanEntity.build();
     }
 
     protected BookEntity bookDTOToBookEntity(BookDTO bookDTO) {

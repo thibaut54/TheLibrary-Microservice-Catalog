@@ -1,3 +1,4 @@
+org\thibaut\thelibrary\service\impl\UserDetailsServiceImpl.class
 org\thibaut\thelibrary\mapper\AuthorMapperImpl.class
 org\thibaut\thelibrary\service\scheduler\CheckLoanScheduler.class
 org\thibaut\thelibrary\mapper\BookMapperImpl.class

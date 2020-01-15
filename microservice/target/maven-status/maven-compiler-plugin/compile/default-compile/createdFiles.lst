@@ -1,5 +1,7 @@
 org\thibaut\thelibrary\controller\BookController.class
-org\thibaut\thelibrary\utils\RestPreconditions.class
 org\thibaut\thelibrary\utils\SingleResourceRetrievedEvent.class
 org\thibaut\thelibrary\exception\ResourceNotFoundException.class
 org\thibaut\thelibrary\CatalogApplication.class
+org\thibaut\thelibrary\helper\DbPopulator.class
+org\thibaut\thelibrary\utils\RestPreconditions.class
+org\thibaut\thelibrary\config\KeycloakConfig.class

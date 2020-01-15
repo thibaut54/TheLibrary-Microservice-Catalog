@@ -9,10 +9,10 @@ import org.thibaut.thelibrary.service.contract.PasswordService;
 public class PasswordServiceImpl implements PasswordService {
 
 	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
 	public String crypt( String password ) {
-		return passwordEncoder.encode( password );
+		return bCryptPasswordEncoder.encode( password );
 	}
 }

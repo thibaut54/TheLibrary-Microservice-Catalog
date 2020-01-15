@@ -2,6 +2,7 @@ package org.thibaut.thelibrary.controller;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.thibaut.thelibrary.dto.BookDTO;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 @CrossOrigin("*")
 public class BookController {
 
@@ -26,7 +28,7 @@ public class BookController {
 	}
 
 
-	@GetMapping("book/{id}")
+	@GetMapping("/book/{id}")
 	public BookDTO bookDTO( @PathVariable("id") Long id, HttpServletResponse response){
 		try {
 			BookDTO bookDTO = RestPreconditions.checkFound( bookService.getBookById( id ) );
@@ -39,7 +41,7 @@ public class BookController {
 	}
 
 
-	@GetMapping("books")
+	@GetMapping("/books")
 	public List<BookDTO> bookDTOList(HttpServletResponse response){
 		try {
 			List<BookDTO> bookDTOList = RestPreconditions.checkFound( bookService.getBookDTOList( ) );
@@ -52,7 +54,7 @@ public class BookController {
 	}
 
 
-	@PutMapping("book")
+	@PutMapping("/book")
 	public BookDTO update( @RequestBody BookDTO bookDTO, HttpServletResponse response ){
 		try {
 			RestPreconditions.checkFound( bookDTO );
@@ -66,7 +68,7 @@ public class BookController {
 	}
 
 
-	@DeleteMapping("book")
+	@DeleteMapping("/book")
 	public void delete( @PathVariable("id") Long id, HttpServletResponse response ){
 		try {
 			RestPreconditions.checkFound(  id );
@@ -79,7 +81,7 @@ public class BookController {
 	}
 
 
-	@DeleteMapping("books/{idList}")
+	@DeleteMapping("/books/{idList}")
 	public void deleteList( @PathVariable("idList") List<Long> idList, HttpServletResponse response ){
 		try {
 			RestPreconditions.checkFound( idList );
@@ -92,7 +94,7 @@ public class BookController {
 	}
 
 
-	@DeleteMapping("books")
+	@DeleteMapping("/books")
 	public void deleteListWithBody( @RequestBody() List<Long> idList, HttpServletResponse response ){
 		try {
 			RestPreconditions.checkFound( idList );

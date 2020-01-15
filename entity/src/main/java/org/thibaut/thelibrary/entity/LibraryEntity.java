@@ -16,7 +16,7 @@ import java.util.List;
 public class LibraryEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String name;
 
@@ -27,4 +27,4 @@ public class LibraryEntity {
 	@ManyToMany(mappedBy = "librarieList")
 	private List< BookEntity > bookList;
 
-}//end LibraryEntity
+}

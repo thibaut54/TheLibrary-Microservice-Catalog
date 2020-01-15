@@ -20,8 +20,6 @@ public class CoordinatesDTO {
 	private String phone;
 	private String email;
 
-	private UserDTO user;
-
 	private EditorDTO editor;
 
 	private LibraryDTO library;

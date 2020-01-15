@@ -37,7 +37,7 @@ import org.thibaut.thelibrary.entity.UserEntity.UserEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-08T10:48:01+0100",
+    date = "2020-01-15T14:59:39+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 1.8.0_211 (Oracle Corporation)"
 )
 public class LoanMapperImpl implements LoanMapper {
@@ -297,7 +297,6 @@ public class LoanMapperImpl implements LoanMapper {
         coordinatesDTO.postalCode( coordinatesEntity.getPostalCode() );
         coordinatesDTO.phone( coordinatesEntity.getPhone() );
         coordinatesDTO.email( coordinatesEntity.getEmail() );
-        coordinatesDTO.user( userEntityToUserDTO( coordinatesEntity.getUser() ) );
         coordinatesDTO.editor( editorEntityToEditorDTO( coordinatesEntity.getEditor() ) );
         coordinatesDTO.library( libraryEntityToLibraryDTO( coordinatesEntity.getLibrary() ) );
 
@@ -393,7 +392,6 @@ public class LoanMapperImpl implements LoanMapper {
         coordinatesEntity.postalCode( coordinatesDTO.getPostalCode() );
         coordinatesEntity.phone( coordinatesDTO.getPhone() );
         coordinatesEntity.email( coordinatesDTO.getEmail() );
-        coordinatesEntity.user( userDTOToUserEntity( coordinatesDTO.getUser() ) );
         coordinatesEntity.editor( editorDTOToEditorEntity( coordinatesDTO.getEditor() ) );
         coordinatesEntity.library( libraryDTOToLibraryEntity( coordinatesDTO.getLibrary() ) );
 
