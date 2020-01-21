@@ -73,6 +73,7 @@ public class UserServiceImpl implements UserService {
 		return optionalUserDTO.orElseThrow( ResourceNotFoundException::new );
 	}
 
+	
 	@Override
 	public UserEntity findByUserName( String username ) {
 		UserEntity userEntity = userRepository.findByUserName( username );

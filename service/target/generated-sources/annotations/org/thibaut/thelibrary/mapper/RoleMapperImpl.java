@@ -10,7 +10,7 @@ import org.thibaut.thelibrary.entity.RoleEntity.RoleEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-15T14:59:38+0100",
+    date = "2020-01-21T11:26:26+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 1.8.0_211 (Oracle Corporation)"
 )
 public class RoleMapperImpl implements RoleMapper {

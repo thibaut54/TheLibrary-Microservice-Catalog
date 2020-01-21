@@ -22,15 +22,15 @@ keycloak:
     realm: TheLibrary
     resource: thelibrary-app
     security-constraints:
-    -   authRoles:
-        - user
-        - admin
-        securityCollections:
-        -   methods:
-            - GET
-            patterns:
-            - /api/books/*
-            - /api/books
+#    -   authRoles:
+#        - user
+#        - admin
+#        securityCollections:
+#        -   methods:
+#            - GET
+#            patterns:
+#            - /api/books/*
+#            - /api/books
     -   authRoles:
         - admin
         securityCollections:

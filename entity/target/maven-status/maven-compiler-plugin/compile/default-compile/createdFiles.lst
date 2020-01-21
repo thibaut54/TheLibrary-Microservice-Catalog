@@ -11,6 +11,7 @@ org\thibaut\thelibrary\entity\QAuthorEntity.class
 org\thibaut\thelibrary\dto\EditorDTO$EditorDTOBuilder.class
 org\thibaut\thelibrary\dto\LibraryDTO$LibraryDTOBuilder.class
 org\thibaut\thelibrary\dto\RoleDTO$RoleDTOBuilder.class
+org\thibaut\thelibrary\entity\Languages.class
 org\thibaut\thelibrary\entity\AuthorEntity$AuthorEntityBuilder.class
 org\thibaut\thelibrary\entity\LibraryEntity.class
 org\thibaut\thelibrary\dto\BookLibraryIdDTO.class

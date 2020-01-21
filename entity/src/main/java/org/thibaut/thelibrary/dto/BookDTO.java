@@ -21,7 +21,7 @@ public class BookDTO {
 
 	private String language;
 
-	private Integer isbn;
+	private Long isbn;
 
 	private DateTime publicationDate;
 

@@ -31,7 +31,7 @@ public class BookEntity {
 
 	private String language;
 
-	private Integer isbn;
+	private Long isbn;
 
 	private DateTime publicationDate;
 
