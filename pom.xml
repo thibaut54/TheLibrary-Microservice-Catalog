@@ -27,11 +27,11 @@
 	<description>A microservice to consult the library's catalog</description>
 
 	<properties>
+		<start-class>org.thibaut.thelibrary.CatalogApplication</start-class>
 		<java-version>1.8</java-version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<springboot-version>2.2.2.RELEASE</springboot-version>
-		<start-class>org.thibaut.thelibrary.webservice.Application</start-class>
 		<joda-time.version>2.10.5</joda-time.version>
 		<mapstruct.version>1.3.1.Final</mapstruct.version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -61,8 +61,8 @@
 			</dependency>
 			<dependency>
 				<groupId>org.thibaut.thelibrary</groupId>
-				<artifactId>webservice</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<artifactId>microservice</artifactId>
+				<version>1</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
 			<dependency>

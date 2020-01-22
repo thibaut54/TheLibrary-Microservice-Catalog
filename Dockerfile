@@ -1,4 +1,5 @@
 FROM openjdk:8
-ADD microservice/target/microservice-0.0.1-SNAPSHOT.jar microservice-0.0.1-SNAPSHOT.jar
+COPY microservice/target/microservice-0.0.1-SNAPSHOT.jar /thelibrary.jar
 EXPOSE 8090
-ENTRYPOINT ["java", "-jar", "microservice-0.0.1-SNAPSHOT.jar"]
+CMD ["/usr/bin/java", "-jar", "-Dspring.profiles.active=default", "/thelibrary.war"]
+#ENTRYPOINT ["java", "-jar", "microservice-0.0.1-SNAPSHOT.jar"]
