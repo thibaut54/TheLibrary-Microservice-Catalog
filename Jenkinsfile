@@ -1,10 +1,11 @@
-node{
-    def app
-
-        stage('Clone'){
-            checkout scm
+pipeline {
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
         }
-        stage('Build image'){
-            app = docker.build("thelibrary-back")
-        }
+    }
 }
