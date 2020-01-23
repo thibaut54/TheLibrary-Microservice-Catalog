@@ -17,4 +17,4 @@ public class EditorDTO {
 
 //	private List< BookDTO > bookList;
 
-}//end EditorEntity
+}

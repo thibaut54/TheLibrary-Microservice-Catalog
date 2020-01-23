@@ -36,4 +36,4 @@ public class CoordinatesEntity {
 	@OneToOne(mappedBy = "coordinates")
 	private LibraryEntity library;
 
-}//end CoordinatesEntity
+}

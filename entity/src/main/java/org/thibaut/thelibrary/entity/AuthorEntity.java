@@ -30,4 +30,4 @@ public class AuthorEntity {
 			inverseJoinColumns = { @JoinColumn(name = "book_id") } )
 	private List< BookEntity > bookList;
 
-}//end AuthorEntity
+}

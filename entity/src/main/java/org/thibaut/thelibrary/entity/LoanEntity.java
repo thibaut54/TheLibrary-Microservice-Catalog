@@ -32,4 +32,4 @@ public class LoanEntity {
 	@JoinColumn(name = "user_id")
 	private UserEntity user;
 
-}//end LoanEntity
+}

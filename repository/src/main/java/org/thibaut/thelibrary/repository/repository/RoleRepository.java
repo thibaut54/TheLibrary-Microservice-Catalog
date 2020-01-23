@@ -11,16 +11,6 @@ import java.util.List;
 @Repository
 public interface RoleRepository extends JpaRepository< RoleEntity, Long > {
 
-//	@Query("SELECT role FROM RoleEntity role JOIN role.users user WHERE user.id =: id")
-//	List< RoleEntity > findRolesByUserId( @Param( "id" ) Long id);
-
-//	@Query("SELECT r FROM RoleEntity r JOIN r.users u WHERE u.userName =:username")
-//	List< RoleEntity > findRoleByUserName( @Param( "username" ) String username );
-//
-//	@Query("SELECT r FROM RoleEntity r JOIN r.users u WHERE u.coordinates.email =:email")
-//	List< RoleEntity > findRoleByEmail( @Param( "email" ) String email );
-
-	//	@Query("SELECT r.role FROM RoleEntity r WHERE r.role =:role")
 	List< RoleEntity > findRolesByRoleContains( String role );
 
 	RoleEntity findByRoleLike( String role );

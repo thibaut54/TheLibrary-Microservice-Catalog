@@ -27,4 +27,4 @@ public class EditorEntity {
 	@OneToMany(mappedBy = "editor")
 	private List< BookEntity > bookList;
 
-}//end EditorEntity
+}
