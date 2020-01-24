@@ -37,7 +37,7 @@ import org.thibaut.thelibrary.entity.UserEntity.UserEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-24T14:30:47+0100",
+    date = "2020-01-24T14:47:38+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.3 (Oracle Corporation)"
 )
 public class UserMapperImpl implements UserMapper {
