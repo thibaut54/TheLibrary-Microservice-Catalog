@@ -2,7 +2,7 @@ package org.thibaut.thelibrary.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import org.thibaut.thelibrary.dto.CoordinatesDTO;
 import org.thibaut.thelibrary.dto.CoordinatesDTO.CoordinatesDTOBuilder;
 import org.thibaut.thelibrary.dto.EditorDTO;
@@ -18,8 +18,8 @@ import org.thibaut.thelibrary.entity.LibraryEntity.LibraryEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-23T09:16:52+0100",
-    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 1.8.0_211 (Oracle Corporation)"
+    date = "2020-01-24T10:31:57+0100",
+    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.3 (Oracle Corporation)"
 )
 public class CoordinatesMapperImpl implements CoordinatesMapper {
 
