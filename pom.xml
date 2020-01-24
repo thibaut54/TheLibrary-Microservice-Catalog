@@ -41,6 +41,10 @@
 
 		<junit-jupiter.version>5.5.2</junit-jupiter.version>
 		<maven-compiler-plugin.source-target.version>1.8</maven-compiler-plugin.source-target.version>
+		<entity.version>0.0.1-SNAPSHOT</entity.version>
+		<repository.version>0.0.1-SNAPSHOT</repository.version>
+		<service.version>0.0.1-SNAPSHOT</service.version>
+		<microservice.version>0.0.1-SNAPSHOT</microservice.version>
 	</properties>
 
 	<dependencyManagement>
@@ -48,22 +52,22 @@
 			<dependency>
 				<groupId>org.thibaut.thelibrary</groupId>
 				<artifactId>entity</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>${entity.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.thibaut.thelibrary</groupId>
 				<artifactId>repository</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>${repository.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.thibaut.thelibrary</groupId>
 				<artifactId>service</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>${service.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.thibaut.thelibrary</groupId>
 				<artifactId>microservice</artifactId>
-				<version>1</version>
+				<version>${microservice.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
 			<dependency>
