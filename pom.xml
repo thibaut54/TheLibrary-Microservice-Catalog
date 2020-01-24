@@ -40,6 +40,7 @@
 		<keycloak.version>8.0.1</keycloak.version>
 
 		<junit-jupiter.version>5.5.2</junit-jupiter.version>
+		<maven-compiler-plugin.source-target.version>1.8</maven-compiler-plugin.source-target.version>
 	</properties>
 
 	<dependencyManagement>
@@ -130,9 +131,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven-compiler-plugin.version}</version>
 					<configuration>
-						<release>${java-version}</release>
-						<source>${java-version}</source>
-						<target>${java-version}</target>
+						<source>${maven-compiler-plugin.source-target.version}</source>
+						<target>${maven-compiler-plugin.source-target.version}</target>
 						<!-- See https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html -->
 						<!-- Classpath elements to supply as annotation processor path. If specified, the compiler   -->
 						<!-- will detect annotation processors only in those classpath elements. If omitted, the     -->

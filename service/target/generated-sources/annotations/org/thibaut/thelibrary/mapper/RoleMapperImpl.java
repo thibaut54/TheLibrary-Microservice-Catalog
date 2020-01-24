@@ -2,7 +2,7 @@ package org.thibaut.thelibrary.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.processing.Generated;
+import javax.annotation.Generated;
 import org.thibaut.thelibrary.dto.RoleDTO;
 import org.thibaut.thelibrary.dto.RoleDTO.RoleDTOBuilder;
 import org.thibaut.thelibrary.entity.RoleEntity;
@@ -10,7 +10,7 @@ import org.thibaut.thelibrary.entity.RoleEntity.RoleEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-24T10:50:08+0100",
+    date = "2020-01-24T11:17:42+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.3 (Oracle Corporation)"
 )
 public class RoleMapperImpl implements RoleMapper {

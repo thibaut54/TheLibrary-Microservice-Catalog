@@ -22,17 +22,17 @@
           <entry name="$MAVEN_REPOSITORY$/joda-time/joda-time/2.9/joda-time-2.9.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.0/lombok-1.18.0.jar" />
         </processorPath>
-        <module name="microservice" />
+        <module name="service" />
         <module name="repository" />
         <module name="entity" />
-        <module name="service" />
+        <module name="microservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="entity" target="11" />
-      <module name="microservice" target="11" />
-      <module name="repository" target="11" />
-      <module name="service" target="11" />
+      <module name="entity" target="1.8" />
+      <module name="microservice" target="1.8" />
+      <module name="repository" target="1.8" />
+      <module name="service" target="1.8" />
       <module name="TheLibrary-Microservice-Catalog" target="11" />
     </bytecodeTargetLevel>
   </component>
