@@ -131,8 +131,8 @@
 					<version>${maven-compiler-plugin.version}</version>
 					<configuration>
 						<release>${java-version}</release>
-<!--						<source>1.8</source>-->
-<!--						<target>1.8</target>-->
+						<source>${java-version}</source>
+						<target>${java-version}</target>
 						<!-- See https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html -->
 						<!-- Classpath elements to supply as annotation processor path. If specified, the compiler   -->
 						<!-- will detect annotation processors only in those classpath elements. If omitted, the     -->
