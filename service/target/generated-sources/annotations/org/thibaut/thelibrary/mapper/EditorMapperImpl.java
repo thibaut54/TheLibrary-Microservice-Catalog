@@ -18,7 +18,7 @@ import org.thibaut.thelibrary.entity.LibraryEntity.LibraryEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-24T11:17:42+0100",
+    date = "2020-01-24T12:22:57+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.3 (Oracle Corporation)"
 )
 public class EditorMapperImpl implements EditorMapper {

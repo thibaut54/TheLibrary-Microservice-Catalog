@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+    thelibrary:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: cont-thelibrary
+        ports:
+            - 8090:8090
+        expose:
+            - 8090
+
+

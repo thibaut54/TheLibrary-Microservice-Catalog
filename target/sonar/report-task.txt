@@ -1,0 +1,6 @@
+projectKey=org.thibaut.thelibrary:thelibrary-microservice-catalog
+serverUrl=http://51.178.48.191:9000
+serverVersion=8.1.0.31237
+dashboardUrl=http://51.178.48.191:9000/dashboard?id=org.thibaut.thelibrary%3Athelibrary-microservice-catalog
+ceTaskId=AW_XStgSEKrGVsiQN8rE
+ceTaskUrl=http://51.178.48.191:9000/api/ce/task?id=AW_XStgSEKrGVsiQN8rE
