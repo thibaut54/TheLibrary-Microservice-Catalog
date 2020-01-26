@@ -1,5 +1,5 @@
 
-node {
+pipeline {
     agent {
         dockerfile true
     }
