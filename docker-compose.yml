@@ -1,8 +1,28 @@
 version: '3.7'
 
 services:
+    db-thelibrary:
+        build:
+            context: ./microservice/src/main/resources/database
+            dockerfile: Dockerfile-db
+        container_name: cont-db-thelibrary
+        restart: unless-stopped
+        ports:
+            - 5432:5432
+        expose:
+            - 5432
+        environment:
+            POSTGRES_USER: admin_thelibrary
+            POSTGRES_PASSWORD: 123
+            POSTGRES_DB: db_thelibrary
+        volumes:
+            - db_data:/var/lib/postgres/data
+        networks:
+            - network-thelibrary
 
-    thelibrary:
+    back-thelibrary:
+        depends_on:
+            - db-thelibrary
         build:
             context: .
             dockerfile: Dockerfile
@@ -11,3 +31,15 @@ services:
             - 8090:8090
         expose:
             - 8090
+        environment:
+            SPRING_DATASOURCE_USERNAME: admin_thelibrary
+            SPRING_DATASOURCE_PASSWORD: 123
+            SPRING_DATASOURCE_URL: jdbc:postgresql://db-thelibrary:5432/db_thelibrary?currentSchema=dev
+        networks:
+            - network-thelibrary
+
+networks:
+    network-thelibrary:
+
+volumes:
+    db_data:
