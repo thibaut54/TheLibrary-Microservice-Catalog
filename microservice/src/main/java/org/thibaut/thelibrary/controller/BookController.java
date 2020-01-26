@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class BookController {
 
 	private BookService bookService;

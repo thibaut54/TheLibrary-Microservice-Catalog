@@ -38,64 +38,18 @@
 	</dependencies>
 
 	<build>
-<!--		<finalName>thelibrary</finalName>-->
-
+<!--		<finalName>thelibrary-microservice</finalName>-->
 		<plugins>
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>org.thibaut.thelibrary.CatalogApplication</mainClass>
+					<mainClass>${start-class}</mainClass>
 				</configuration>
 			</plugin>
 
 		</plugins>
-
-<!--		<pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;-->
-
-<!--			<plugins>-->
-
-<!--				<plugin>-->
-<!--					<artifactId>maven-clean-plugin</artifactId>-->
-<!--					<version>3.0.0</version>-->
-<!--				</plugin>-->
-
-<!--				&lt;!&ndash; see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging &ndash;&gt;-->
-<!--				<plugin>-->
-<!--					<artifactId>maven-resources-plugin</artifactId>-->
-<!--					<version>3.1.0</version>-->
-<!--				</plugin>-->
-
-<!--				<plugin>-->
-<!--					<artifactId>maven-compiler-plugin</artifactId>-->
-<!--					<version>3.8.1</version>-->
-<!--				</plugin>-->
-
-<!--				<plugin>-->
-<!--					<artifactId>maven-surefire-plugin</artifactId>-->
-<!--					<version>3.0.0-M4</version>-->
-<!--				</plugin>-->
-
-<!--				<plugin>-->
-<!--					<artifactId>maven-war-plugin</artifactId>-->
-<!--					<version>3.2.3</version>-->
-<!--				</plugin>-->
-
-<!--				<plugin>-->
-<!--					<artifactId>maven-install-plugin</artifactId>-->
-<!--					<version>3.0.0-M1</version>-->
-<!--				</plugin>-->
-
-<!--				<plugin>-->
-<!--					<artifactId>maven-deploy-plugin</artifactId>-->
-<!--					<version>3.0.0-M1</version>-->
-<!--				</plugin>-->
-
-<!--			</plugins>-->
-
-<!--		</pluginManagement>-->
-
 	</build>
 
 </project>

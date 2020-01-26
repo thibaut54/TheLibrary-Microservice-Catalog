@@ -2,7 +2,7 @@ package org.thibaut.thelibrary.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import org.thibaut.thelibrary.dto.CategoryDTO;
 import org.thibaut.thelibrary.dto.CategoryDTO.CategoryDTOBuilder;
 import org.thibaut.thelibrary.entity.CategoryEntity;
@@ -10,7 +10,7 @@ import org.thibaut.thelibrary.entity.CategoryEntity.CategoryEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-24T14:47:36+0100",
+    date = "2020-01-26T10:36:59+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.3 (Oracle Corporation)"
 )
 public class CategoryMapperImpl implements CategoryMapper {
