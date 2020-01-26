@@ -1,18 +1,3 @@
-spring:
-    datasource:
-        driverClassName: org.postgresql.Driver
-        password: 123
-        url: jdbc:postgresql://localhost:5432/db_thelibrary?currentSchema=dev
-        username: admin_tl
-    jpa:
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
-#        hibernate:
-#            ddl-auto: update
-        properties:
-            hibernate:
-                temp:
-                    use_jdbc_metadata_defaults: false
-        show-sql: true
 
 keycloak:
     auth-server-url: http://localhost:8080/auth
@@ -41,16 +26,6 @@ keycloak:
             - PUT
             patterns:
             - /api/books/*
-
-logging:
-    level:
-        org:
-            hibernate:
-                SQL: DEBUG
-                type:
-                    descriptor:
-                        sql:
-                            BasicBinder: TRACE
 
 server:
     port: 8090
