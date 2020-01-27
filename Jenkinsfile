@@ -1,5 +1,11 @@
 
 node {
+
+    stage('Initialize'){
+        def dockerHome = tool 'docker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+
     stage('SCM Checkout') {
           git 'https://github.com/thibaut54/TheLibrary-Microservice-Catalog.git'
     }
@@ -8,7 +14,6 @@ node {
         sh "${mvnHome}/bin/mvn package"
     }
     def img = stage('Build docker image'){
-        tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
         docker.build("thelibrary-img", '.')
     }
     stage('Run docker image'){
