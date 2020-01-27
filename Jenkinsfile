@@ -7,12 +7,11 @@ node {
         def mvnHome = tool name: 'Maven-3.6.3', type: 'maven'
         sh "${mvnHome}/bin/mvn package"
     }
-    def img = stage('Build docker image'){
-        docker.build("thelibrary-img", '.')
-    }
-    stage('Run docker image'){
-        img.withRun("--name run-$BUILD_ID -p 8090:8090") {
-            sh 'docker ps'
+    stage("Test back end") {
+        agent {
+            dockerfile {
+                filename "Dockerfile"
+            }
         }
     }
 }
