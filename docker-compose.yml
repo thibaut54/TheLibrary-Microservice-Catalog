@@ -3,7 +3,7 @@ version: '3.7'
 services:
     db-thelibrary:
         build:
-            context: .
+            context: ./microservice/src/main/resources/database
             dockerfile: Dockerfile-db
         container_name: cont-db-thelibrary
         restart: unless-stopped
