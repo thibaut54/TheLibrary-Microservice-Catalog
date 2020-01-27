@@ -1,6 +1,5 @@
 
 node {
-    agent none
     stage('SCM Checkout') {
           git 'https://github.com/thibaut54/TheLibrary-Microservice-Catalog.git'
     }
@@ -13,6 +12,15 @@ node {
             dockerfile {
                 filename "Dockerfile"
             }
+        }
+    }
+    def img = stage('Build docker image'){
+        tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
+        docker.build("thelibrary-img", '.')
+    }
+    stage('Run docker image'){
+        img.withRun("--name run-$BUILD_ID -p 8090:8090") {
+            sh 'docker ps'
         }
     }
 }
