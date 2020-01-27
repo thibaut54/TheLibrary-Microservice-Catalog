@@ -7,13 +7,6 @@ node {
         def mvnHome = tool name: 'Maven-3.6.3', type: 'maven'
         sh "${mvnHome}/bin/mvn package"
     }
-    stage("Test back end") {
-        agent {
-            dockerfile {
-                filename "Dockerfile"
-            }
-        }
-    }
     def img = stage('Build docker image'){
         tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
         docker.build("thelibrary-img", '.')
